@@ -6,6 +6,7 @@ import { ITodo } from './todo.model';
 @Injectable()
 
 export class TodoService {
+    
     getTodos(): Promise<ITodo[]> {
         return new Promise(resolve => setTimeout(() => resolve(todos), 1000));
     }

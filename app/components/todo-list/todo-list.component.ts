@@ -9,16 +9,14 @@ import { TodoService } from '../../shared/todo.service';
     selector: 'todo-list',
     templateUrl: './app/components/todo-list/todo-list.component.html',
     styleUrls: ['./app/components/todo-list/todo-list.component.css'],
-    directives: [TodoItem],
-    providers: [TodoService]
+    directives: [TodoItem]
 })
 
 export class TodoListComponent implements OnInit {
     todos: ITodo[];
     
     constructor(private todoService: TodoService) { 
-        this.todos = [];
-    }
+        this.todos = [];}
     
     ngOnInit() {
         this.todoService.getTodos().then(todos => this.todos = todos);
