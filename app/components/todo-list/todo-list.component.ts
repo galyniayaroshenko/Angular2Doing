@@ -13,6 +13,14 @@ import { Todo } from '../../shared/todo.model';
 export class TodoListComponent {
     @Input() todos: Todo[];
     
+    get sortedTodos() {
+        return this.todos.sort((a: Todo,b: Todo) => {
+            if(a.done && !b.done) return 1;
+            else if (!a.done && b.done) return -1;
+            else return 0;
+        });
+    }
+    
     onTodoDeleted(todo: Todo) {
         if (todo) {
             let index = this.todos.indexOf(todo);
