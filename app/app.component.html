@@ -9,8 +9,22 @@
 <div class="ui text container">
     <div class="ui segment form">
         <div class="ui fluid action input">
-            <input type="text" name="title" placeholder="Що треба зробити?">
-            <button type="button" class="ui primary button">Додати</button>
+            <input type="text" name="title" placeholder="Що треба зробити?" #titleInput>
+            <button type="button" class="ui primary button" (click)="addTodo(titleInput)">Додати</button>
         </div>
     </div>
+    
+    <div class="ui raised segment" *ngIf="todos.length > 0">
+        <div id="todos" class="ui maddle aligned divided selection list"> 
+            <div class="to do item" *ngFor="let todo of todos">
+                <div class="ui checkbox">
+                    <input type="checkbox">
+                    <label>{{todo}}</label>
+                </div>
+                
+                <button class="ui red button"><i class="trash outline icon"></i> </button>
+            </div>
+        </div>
+    </div>
+    
 </div>
