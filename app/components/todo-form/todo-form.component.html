@@ -1,6 +1,6 @@
 <div class="ui segment form">
         <div class="ui fluid action input">
-            <input type="text" name="title" placeholder="Що треба зробити?" (keyup.enter)="addTodo(titleInput.value); titleInput.value = ''" #titleInput>
+            <input type="text" name="title" placeholder="Що треба зробити?" (keyup.enter)="add(titleInput.value); titleInput.value = ''" #titleInput>
             <button type="button" class="ui primary button" (click)="add(titleInput.value); titleInput.value = ''">Додати</button>
         </div>
 </div>
