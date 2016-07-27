@@ -14,10 +14,7 @@ export class AppComponent {
         this.todos = ['cdc'];
     }
     
-    addTodo(event: any) {
-        if(event.type === 'keyup' && event.which === 13) {
-            console.log(event);
-            this.todos.push(event.target.value);
-        }
+    addTodo(title: string) {
+       this.todos.push(title);
     }
 }
