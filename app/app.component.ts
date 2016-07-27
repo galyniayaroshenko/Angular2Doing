@@ -14,10 +14,10 @@ export class AppComponent {
         this.todos = ['cdc'];
     }
     
-    addTodo(input:HTMLInputElement) {
-        let title = input.value;
-        input.value = '';
-        console.log('title', title);
-        this.todos.push(title);
+    addTodo(event: any) {
+        if(event.type === 'keyup' && event.which === 13) {
+            console.log(event);
+            this.todos.push(event.target.value);
+        }
     }
 }
