@@ -1,12 +1,5 @@
 <div class="ui raised segment" *ngIf="todos.length > 0">
         <div id="todos" class="ui maddle aligned divided selection list"> 
-            <div class="to do item" *ngFor="let todo of todos">
-                <div class="ui checkbox">
-                    <input type="checkbox">
-                    <label>{{todo}}</label>
-                </div>
-                
-                <button class="ui red button"><i class="trash outline icon"></i> </button>
-            </div>
+            <todo-item *ngFor="let todo of todos" [todo]="todo"></todo-item>
         </div>
-    </div>
+</div>
