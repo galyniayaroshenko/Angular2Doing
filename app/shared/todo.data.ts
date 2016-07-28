@@ -1,9 +1,12 @@
-import { ITodo } from './todo.model';
+export class TodoSeedData {
 
-export let todos: ITodo[] = [
-    { title: 'Вивчити TypeScript', done: false },
-    { title: 'Вивчити ES6', done: false },
-    { title: 'Вивчити Angular 2', done: false },
-    { title: 'Відпочити', done: false }
-    
-];
+    createDb() {
+        let todos = [
+            { id: 1, title: "Изучить ES6", done: false },
+            { id: 2, title: "Изучить TypeScript", done: false },
+            { id: 3, title: "Изучить Angular 2", done: false }
+        ];
+
+        return { todos };
+    }
+}
